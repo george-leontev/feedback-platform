@@ -1,0 +1,3 @@
+create database college_feedback_platform
+with
+owner postgres
