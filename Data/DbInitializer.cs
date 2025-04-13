@@ -24,6 +24,7 @@ public static class DbInitializer
             {
                 Username = "Egorchik",
                 Password = "12345",
+                Email = "example@gmail.com",
                 IsAdmin = true
             });
         }

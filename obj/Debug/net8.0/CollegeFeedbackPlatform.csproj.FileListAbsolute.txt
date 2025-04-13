@@ -134,3 +134,11 @@
 /home/george/projects/CollegeFeedbackPlatform/obj/Debug/net8.0/CollegeFeedbackPlatform.genruntimeconfig.cache
 /home/george/projects/CollegeFeedbackPlatform/obj/Debug/net8.0/ref/CollegeFeedbackPlatform.dll
 /home/george/projects/CollegeFeedbackPlatform/bin/Debug/net8.0/Newtonsoft.Json.dll
+/home/george/projects/CollegeFeedbackPlatform/obj/Debug/net8.0/CollegeFeedbackPlatform.sourcelink.json
+/home/george/projects/CollegeFeedbackPlatform/bin/Debug/net8.0/Microsoft.Extensions.Diagnostics.Abstractions.dll
+/home/george/projects/CollegeFeedbackPlatform/bin/Debug/net8.0/Microsoft.Extensions.Hosting.Abstractions.dll
+/home/george/projects/CollegeFeedbackPlatform/bin/Debug/net8.0/Microsoft.Extensions.ObjectPool.dll
+/home/george/projects/CollegeFeedbackPlatform/bin/Debug/net8.0/Microsoft.Extensions.WebEncoders.dll
+/home/george/projects/CollegeFeedbackPlatform/bin/Debug/net8.0/System.Security.Cryptography.Pkcs.dll
+/home/george/projects/CollegeFeedbackPlatform/bin/Debug/net8.0/System.Security.Cryptography.Xml.dll
+/home/george/projects/CollegeFeedbackPlatform/bin/Debug/net8.0/runtimes/win/lib/net8.0/System.Security.Cryptography.Pkcs.dll

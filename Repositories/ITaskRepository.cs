@@ -1,6 +1,4 @@
 using CollegeFeedbackPlatform.Models;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace CollegeFeedbackPlatform.Repositories;
 
