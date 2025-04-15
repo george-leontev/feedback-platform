@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using CollegeFeedbackPlatform.Repositories;
 using CollegeFeedbackPlatform.Services;
 using CollegeFeedbackPlatform.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace CollegeFeedbackPlatform.Controllers;
 
@@ -11,10 +12,15 @@ public class UsersController : ControllerBase
 {
     private readonly IUserRepository _userRepository;
     private readonly IAuthenticationService _authService;
-    public UsersController(IUserRepository userRepository, IAuthenticationService authService)
+    private readonly IRecoverPasswordService _recoverPasswordService;
+    private readonly PasswordHasher<User> _hasher;
+
+    public UsersController(IUserRepository userRepository, IAuthenticationService authService, IRecoverPasswordService recoverPasswordService)
     {
         _userRepository = userRepository;
         _authService = authService;
+        _hasher = new PasswordHasher<User>();
+        _recoverPasswordService = recoverPasswordService;
     }
 
     [HttpGet("{id}")]
@@ -53,5 +59,18 @@ public class UsersController : ControllerBase
         }
 
         return Ok(user);
+    }
+
+    [HttpPost("recover-password")]
+    public async Task<IActionResult> ForgotPassword([FromBody] string email)
+    {
+        var success = await _recoverPasswordService.RecoverPasswordAsync(email);
+
+        if (!success)
+        {
+            return NotFound("User with this email was not found");
+        }
+
+        return Ok("New password has been sent to your email.");
     }
 }

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CollegeFeedbackPlatform")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+998d630b48436f3926550fd897c9b00be254c4ff")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a6314f9b5991e02e9417f38fea4341dfc8c50243")]
 [assembly: System.Reflection.AssemblyProductAttribute("CollegeFeedbackPlatform")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CollegeFeedbackPlatform")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
