@@ -10,7 +10,7 @@ public class TaskItem
 
     public string Description { get; set; }
 
-    public int StatusId { get; set; }
+    public int StatusId { get; set; } = 1;
 
     [SwaggerIgnore]
     public Status? AssignedStatus { get; set; }

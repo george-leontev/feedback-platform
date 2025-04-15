@@ -20,11 +20,16 @@ public class TaskRepository : ITaskRepository
         return tasks;
     }
 
-    public async Task<TaskItem> GetAsync(int id)
+    public async Task<TaskItem> GetAsync(int taskId)
     {
         var task = await _context.Tasks
             .Include(t => t.AssignedStatus)
-            .FirstOrDefaultAsync(t => t.Id == id);
+            .FirstOrDefaultAsync(t => t.Id == taskId);
+
+        if (task is null)
+        {
+            return null;
+        }
 
         return task;
     }
@@ -54,5 +59,20 @@ public class TaskRepository : ITaskRepository
         await _context.SaveChangesAsync();
 
         return updatedTask;
+    }
+
+    public async Task<TaskItem> DeleteAsync(int taskId)
+    {
+        var deletedTask = await _context.Tasks.FirstOrDefaultAsync(t => t.Id == taskId);
+
+        if (deletedTask is null)
+        {
+            return null;
+        }
+
+        _context.Tasks.Remove(deletedTask);
+        await _context.SaveChangesAsync();
+
+        return deletedTask;
     }
 }

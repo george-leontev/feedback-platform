@@ -1,8 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using CollegeFeedbackPlatform.Repositories;
 using CollegeFeedbackPlatform.Services;
+using CollegeFeedbackPlatform.Models;
 
-namespace CollegeFeedbackPlatform.Models;
+namespace CollegeFeedbackPlatform.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]

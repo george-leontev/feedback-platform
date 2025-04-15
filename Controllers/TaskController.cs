@@ -1,7 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using CollegeFeedbackPlatform.Repositories;
+using CollegeFeedbackPlatform.Models;
 
-namespace CollegeFeedbackPlatform.Models;
+namespace CollegeFeedbackPlatform.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
@@ -21,10 +22,10 @@ public class TasksController : ControllerBase
         return Ok(tasks);
     }
 
-    [HttpGet("{id}")]
-    public async Task<ActionResult<TaskItem>> GetAsync(int id)
+    [HttpGet("{taskId}")]
+    public async Task<ActionResult<TaskItem>> GetAsync(int taskId)
     {
-        var task = await _taskRepository.GetAsync(id);
+        var task = await _taskRepository.GetAsync(taskId);
 
         if (task == null)
         {
@@ -58,5 +59,18 @@ public class TasksController : ControllerBase
         }
 
         return updatedTask;
+    }
+
+    [HttpDelete("{taskId}")]
+    public async Task<ActionResult<TaskItem>> DeleteAsync(int taskId)
+    {
+        var deletedTask = await _taskRepository.DeleteAsync(taskId);
+
+        if (deletedTask is null)
+        {
+            return NotFound("Task wasnot found");
+        }
+
+        return deletedTask;
     }
 }
