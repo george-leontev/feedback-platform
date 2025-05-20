@@ -28,6 +28,18 @@ public class UserRepository : IUserRepository
         return user;
     }
 
+    public async Task<IEnumerable<User>> GetAllAsync()
+    {
+        var users = await _context.Users.ToListAsync();
+
+        if (users == null)
+        {
+            return null;
+        }
+
+        return users;
+    }
+
     public async Task<User> PostAsync(User user)
     {
         user.Password = _hasher.HashPassword(user, user.Password);

@@ -35,7 +35,8 @@ public static class DbInitializer
             {
                 Title = "Add feature",
                 Description = "Change color of button in production website",
-                StatusId = 1
+                StatusId = 1,
+                UserId = 1,
             });
         }
 

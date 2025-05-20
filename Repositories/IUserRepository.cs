@@ -7,4 +7,6 @@ public interface IUserRepository
     Task<User> GetAsync(int id);
 
     Task<User> PostAsync(User user);
+
+    Task<IEnumerable<User>> GetAllAsync();
 }

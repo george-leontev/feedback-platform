@@ -36,6 +36,14 @@ public class UsersController : ControllerBase
         return Ok(user);
     }
 
+    [HttpGet]
+    public async Task<ActionResult<IEnumerable<User>>> GetAllAsync()
+    {
+        var users = await _userRepository.GetAllAsync();
+
+        return Ok(users);
+    }
+
     [HttpPost]
     public async Task<ActionResult<User>> PostAsync([FromBody] User user)
     {
